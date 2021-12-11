@@ -7,7 +7,6 @@ let clickUpgrades = {
         multiplier: 1
     }
 };
-
 let automaticUpgrades = {
     vine: {
         price: 100,
@@ -15,37 +14,28 @@ let automaticUpgrades = {
         multiplier: 25
     }
 };
-
 function mine() {
     let template = ''
     sales++;
     template += `Sales: ${sales}`
-    clickUp()
     document.getElementById('sa').innerText = template
+    if (sales >= 10) {
+        clickUpgrades.beats.quantity++
+        sales++
+        document.getElementById('beatz').style.display = "block"
+    }
+    else document.getElementById('beatz').style.display = "none"
 }
 
-function clickUp(clickUps) {
-    const beat = clickUpgrades[clickUps];
-    for (const key in clickUpgrades) {
-        if (clickUps == 'beats') {
-            if (beat.multiplier == 1) {
-                beat.multiplier++
-            }
-            else beat.multiplier++
-            if (beat.quantity == 0) {
-                beat.quantity++
-            }
-            else beat.quantity++
-        }
+function clickUp() {
+    for (let i = `${sales}`; i < clickUpgrades.beats.quantity.length; i++) {
+        const key = clickUpgrades[i];
     }
     drawClickUp()
 }
+
 function drawClickUp() {
     let template = ''
-    for (const key in clickUpgrades) {
-        const cUp = clickUpgrades[key];
-        template += `beats: ${clickUpgrades[key].quantity}`
-    }
-    document.getElementById('clickingUp').innerText = template
+    template += `Beats: ${clickUpgrades.beats.quantity}`
+    document.getElementById('Beatz').innerText = template
 }
-drawClickUp()
