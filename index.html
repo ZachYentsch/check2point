@@ -22,25 +22,21 @@
 
     <main class="container-fluid bg-dark">
         <div class="row">
-            <div class="col-md-3 bg-success d-grid justify-content-between align-items-center">
-                <h4 id="sa">Sales: 0</h4>
-                <h4 id="Beatz">Beats: 0</h4>
-                <!-- <h4 id="autoUp">AutomaticUpgrade:</h4> -->
+            <div class="col-3">
+                <h3 class="text-light">Beats Made: <span id="counter"></span></h3>
+                <h3 class="text-light">Mixups Made: <span id="mixUp"></span></h3>
+                <h3 class="text-light">Managers: <span id="manUp"></span></h3>
             </div>
             <div class="col-md-6 d-flex justify-content-center p-4">
                 <img src="https://djmd.ir/wp-content/uploads/2020/01/Jog-wheel-djmd.ir_-600x600.jpg" alt=""
-                    style="height: 90%; width: 90%; object-fit: contain;" onclick="mine()" id="turnD">
+                    style="height: 90%; width: 90%; object-fit: contain; fa-spin" onclick="mine()" id="turnD">
             </div>
-            <div class="col-md-3 bg-success">
-                <h2>Upgrades:</h2>
-                <div class="row">
-                    <div class="col-12 d-flex flex-column">
-                        <button onclick="clickUp('')" class="btn bg-primary my-2" id="beatz">Beatz</button>
-                        <!-- <button class="btn bg-primary my-2">clickup2</button>
-                        <button class="btn bg-primary my-2">autoclick</button>
-                        <button class="btn bg-primary my-2">autoclick2</button> -->
-                    </div>
-                </div>
+            <div class="col-3">
+                <button id="cUp" class="btn btn-primary" onclick="clickUp()">MixUps</button>
+                <p class="text-light">MixUp Price: <Span id="mxUpPrice"></Span> </p>
+
+                <button id="autoCk" class="btn btn-primary" onclick="autoUp()">Manager</button>
+                <p class="text-light">Manager Price: <span id="autoManPrice"></span></p>
             </div>
         </div>
     </main>
@@ -52,7 +48,6 @@
             </div>
         </div>
     </footer>
-
 
 
 
